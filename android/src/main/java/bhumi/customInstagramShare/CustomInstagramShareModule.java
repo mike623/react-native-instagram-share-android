@@ -70,7 +70,7 @@ public class CustomInstagramShareModule extends ReactContextBaseJavaModule imple
     public void shareWithInstagram(String mediaPath , Callback callback) {
        this.callback = callback;
 
-       String type = "image/*";
+       String type = "video/*";
        String filename = mediaPath.substring(mediaPath.lastIndexOf("/")+1);
 
        if(isAppInstalled("com.instagram.android") == false){

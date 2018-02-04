@@ -21,20 +21,23 @@ public class CustomInstagramSharePackage implements ReactPackage {
         mActivity = activity;
     }
 
-    @Override
-    public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-        return Arrays.<NativeModule>asList(
-                new CustomInstagramShareModule(reactContext, mActivity)
-        );
-    }
+    
+    public List<NativeModule> createNativeModules(
+                              ReactApplicationContext reactContext) {
+        List<NativeModule> modules = new ArrayList<>();
 
-    @Override
+        modules.add(new CustomInstagramShareModule(reactContext, mActivity));
+
+        return modules;
+      }
+
+
     public List<Class<? extends JavaScriptModule>> createJSModules() {
-        return Collections.emptyList();
-    }
+  	return Collections.emptyList();
+  }
 
-    @Override
-    public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
-        return Collections.emptyList();
-    }
+    public List<ViewManager> createViewManagers(
+                            ReactApplicationContext reactContext) {
+  	return Collections.emptyList();
+  }
 }
